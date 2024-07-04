@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Product = require("./Model/product.model");
 const app = express();
 const port = 3000;
 app.use(express.json());
@@ -15,9 +16,13 @@ mongoose.connect(url)
             res.send('Hello World!');
         });
 
-
-        app.get('/oni', (req, res) => {
-            res.send('Hello World! Oni');
+        app.post('/api/products', async (req, res) => {
+            try {
+                const product = await Product.create(req.body); // create Product
+                return res.status(200).send(product);
+            } catch (error) {
+                res.status(500).json({ error: error.message });
+            }
         });
 
 
