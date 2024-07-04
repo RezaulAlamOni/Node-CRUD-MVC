@@ -19,3 +19,11 @@ B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+C
+Model/User.model.js,1\4\1413771971fb65f9bc9f70ad25d3b212ab364014
+D
+routes/auth.route.js,6\8\6819dfe6f6180acd080756dfa6ead66176f9ffc5
+M
+controller/auth.controller.js,b\5\b5f7d5371c521b71b2836df3f36518d90d7d3e38
+D
+Model/Login.model.js,b\a\bae1aea5578286d9208d400122cb03a05d96fdde

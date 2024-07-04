@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const productsRouter = require('./routes/products.route');
+const AuthRoute = require('./routes/auth.route');
 const app = express();
 const port = 3000;
 
@@ -10,6 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 // routers
+app.use('/api/auth', AuthRoute);
 app.use('/api/products', productsRouter);
 
 const url = 'mongodb+srv://onicse21:ZMgfrxnv1OsNN5vj@nodecruddb.5nuefq6.mongodb.net/Node-Api?retryWrites=true&w=majority&appName=nodeCrudDB'
