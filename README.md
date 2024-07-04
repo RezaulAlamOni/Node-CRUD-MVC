@@ -40,8 +40,15 @@ cd Node-CRUD-MVC
 
 ```sh
 # Build the Docker images
-
 docker-compose build
-
 # Start the Docker containers
 docker-compose up
+```
+
+## Running the Application Locally without Docker
+
+```sh
+# Install dependencies:
+npm install
+# Start the application:
+npm run dev
