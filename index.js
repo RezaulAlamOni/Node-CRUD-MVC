@@ -16,6 +16,7 @@ mongoose.connect(url)
             res.send('Hello World!');
         });
 
+        // post product create
         app.post('/api/products', async (req, res) => {
             try {
                 const product = await Product.create(req.body); // create Product
@@ -25,6 +26,41 @@ mongoose.connect(url)
             }
         });
 
+        // get all products
+        app.get('/api/products', async (req, res) => {
+            try {
+                const products = await Product.find({});
+                return res.status(200).json(products);
+            } catch (error) {
+                res.status(500).json({ error: error.message });
+            }
+        });
+
+        // get single product
+        app.get('/api/product/:id', async (req, res) => {
+            const { id } = req.params;
+            try {
+                const product = await Product.findById(id);
+                return res.status(200).json(product);
+            } catch (error) {
+                res.status(500).json({ error: error.message });
+            }
+        });
+
+        // update product
+        app.put('/api/product/:id', async (req, res) => {
+            const { id } = req.params;
+            try {
+                const product = await Product.findByIdAndUpdate(id, req.body);
+                if (!product) {
+                    return res.status(404).json({ error: 'Product not found' });
+                }
+                const UpdatedProduct = await Product.findById(id);
+                res.status(200).json(UpdatedProduct);
+            } catch (error) {
+                res.status(500).json({ error: error.message });
+            }
+        });
 
     })
     .catch(() => {
