@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/products', productsRouter);
 
 const url = 'mongodb+srv://onicse21:ZMgfrxnv1OsNN5vj@nodecruddb.5nuefq6.mongodb.net/Node-Api?retryWrites=true&w=majority&appName=nodeCrudDB'
+// const url =  'mongodb://localhost:27017/simple-crud?retryWrites=true&w=majority&appName=nodeCrudDB';
 mongoose.connect(url)
     .then(() => {
         console.log("Connected to database!");

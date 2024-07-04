@@ -12,3 +12,8 @@ H
 routes/products.route.js,4\f\4f843fb7a8650a2dee66c84c4bafbabb8c47040b
 Q
 !controller/products.controller.js,5\8\58070efe57db6b33b635d522a74e074f7dd5b093
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+B
+docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
